@@ -1,0 +1,25 @@
+return {
+  ui = { border = "rounded" },
+  ensure_installed = {
+    "bash-language-server",
+    "beautysh",
+    "shellcheck",
+    "clangd",
+    "clang-format",
+    "golangci-lint",
+    "markdownlint",
+    "mdformat",
+    "lua-language-server",
+    "stylua",
+    "css-lsp",
+    "djlint",
+    "html-lsp",
+    "stylelint",
+    "prettier",
+    "ruff-lsp",
+    "rust-analyzer",
+    "codelldb",
+    "dprint",
+    "intelephense"
+  },
+}

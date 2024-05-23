@@ -1,37 +1,33 @@
-local configs = require "nvchad.configs.lspconfig"
+-- GROUP: [[ SERVERS ]]
 
-local servers = {
-  intelephense = {},
-  html = {},
-  awk_ls = {},
-  bashls = {},
-  cssls = {},
-  tsserver = {},
-  rust_analyzer = {
-    settings = {
-      ['rust-analyzer'] = {
-        diagnostics = {
-          enable = true;
-        }
-      }
-    }
-  },
-  pyright = {
-    settings = {
-      python = {
-        analysis = {
-          autoSearchPaths = true,
-          typeCheckingMode = "basic",
-        },
-      },
-    },
-  },
+local lspconfig = require "lspconfig"
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
+
+lspconfig.ruff_lsp.setup {
+  on_attach = function(client)
+    -- Disable hover in favour of Pyright
+    client.server_capabilities.hoverProvider = false
+  end,
+  on_init = on_init,
+  capabilities = capabilities,
 }
 
-for name, opts in pairs(servers) do
-  opts.on_init = configs.on_init
-  opts.on_attach = configs.on_attach
-  opts.capabilities = configs.capabilities
+-- GROUP: [[ UI ]]
 
-  require("lspconfig")[name].setup(opts)
-end
+local border = "rounded" -- "single" | "rounded"
+-- local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+
+-- :LspInfo
+local win = require "lspconfig.ui.windows"
+win.default_options = { border = border }
+
+-- vim.diagnostic.open_float()
+vim.diagnostic.config { virtual_text = true, float = { border = border } }
+
+-- vim.lsp.buf.hover()
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
+
+-- vim.lsp.buf.signature_help()
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
