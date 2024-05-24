@@ -5,15 +5,6 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-lspconfig.ruff_lsp.setup {
-  on_attach = function(client)
-    -- Disable hover in favour of Pyright
-    client.server_capabilities.hoverProvider = false
-  end,
-  on_init = on_init,
-  capabilities = capabilities,
-}
-
 -- GROUP: [[ UI ]]
 
 local border = "rounded" -- "single" | "rounded"

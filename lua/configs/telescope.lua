@@ -1,6 +1,6 @@
 return {
-  defaults = {
-    selection_caret = " ",
-    entry_prefix = " ",
-  },
+    defaults = {
+        selection_caret = " ",
+        entry_prefix = " ",
+    },
 }

@@ -1,12 +1,8 @@
 return {
-  dev = {
-    path = "~/workspace/my-projects/neovim/",
-    patterns = { "gale" },
-  },
   defaults = { lazy = true },
   install = { colorscheme = { "nvchad" } },
+
   ui = {
-    border = "rounded",
     icons = {
       ft = "",
       lazy = "󰂠 ",
@@ -14,6 +10,7 @@ return {
       not_loaded = "",
     },
   },
+
   performance = {
     rtp = {
       disabled_plugins = {

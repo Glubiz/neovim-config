@@ -1,36 +1,9 @@
 require "nvchad.options"
 
--- Re-activate providers
-local providers = {
-  "python3_provider",
-  "node_provider",
-}
-
--- Clipboard commands
-local clipboard = {
-  copy = "clip.exe",
-  paste = [[
-    pwsh.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))
-  ]],
-}
-
 local g = {
-  dap_virtual_text = true,
+  virtual_text = true,
   bookmark_sign = "",
   skip_ts_context_commentstring_module = true,
-  -- use Windows clipboard for + and * registers (WSL)
-  clipboard = {
-    name = "wslclipboard",
-    copy = {
-      ["+"] = clipboard.copy,
-      ["*"] = clipboard.copy,
-    },
-    paste = {
-      ["+"] = clipboard.paste,
-      ["*"] = clipboard.paste,
-    },
-    cache_enabled = 0,
-  },
 }
 
 local tabSize = 2
@@ -48,7 +21,6 @@ local opt = {
   -- True color support
   termguicolors = true,
   emoji = false,
-  relativenumber = true,
   -- Line break/wrap behaviours
   wrap = true,
   linebreak = true,
@@ -67,11 +39,6 @@ local opt = {
 }
 
 -- GROUP: [[ LOOPS ]]
-
-for _, v in ipairs(providers) do
-  vim.g["loaded_" .. v] = nil
-  vim.cmd("runtime " .. v)
-end
 
 for k, v in pairs(g) do
   vim.g[k] = v

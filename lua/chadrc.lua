@@ -1,40 +1,16 @@
--- This file  needs to have same structure as nvconfig.lua
+-- This file  needs to have same structure as nvconfig.lua 
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
--- https://github.com/NvChad/ui/blob/v2.5/nvchad_types/chadrc.lua
 
--- ---@type ChadrcConfig
+---@type ChadrcConfig
 local M = {}
 
 M.ui = {
-  transparency = true,
-  theme = "github_dark",
-  theme_toggle = { "chadracula-evondev", "github_dark" },
+	theme = "github_dark",
 
-  statusline = {
-    theme = "vscode_colored",
-  },
-
-  telescope = { style = "bordered" },
-
-  hl_override = {
-    Comment = { italic = true },
-    ["@comment"] = { italic = true },
-  },
-
-  hl_add = {
-    YankVisual = { bg = "#303847" },
-  },
-
-  term = {
-    float = {
-      border = "rounded",
-    },
-  },
-
-  lsp = {
-    signature = false,
-    semantic_tokens = true,
-  },
+	-- hl_override = {
+	-- 	Comment = { italic = true },
+	-- 	["@comment"] = { italic = true },
+	-- },
 }
 
 return M
