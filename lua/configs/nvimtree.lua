@@ -14,5 +14,8 @@ return {
         },
     },
     -- Allow statuscolumn to be applied on nvim-tree
-    view = { signcolumn = "no" },
+    view = { 
+        signcolumn = "no",
+        adaptive_size = true
+    },
 }

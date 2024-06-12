@@ -34,6 +34,7 @@ local opt = {
     ignorecase = true,
     iskeyword = vim.opt.iskeyword:append { "_", "@", ".", "-" },
     path = ".,src**",
+    number = true,
 }
 
 -- GROUP: [[ LOOPS ]]

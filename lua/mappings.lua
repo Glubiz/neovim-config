@@ -1,4 +1,5 @@
 require "nvchad.mappings"
+
 local bufnr = vim.api.nvim_get_current_buf()
 
 local map = function(mode, lhs, rhs, opts)

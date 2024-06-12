@@ -12,6 +12,7 @@ return {
   { import = "plugins.manager.treesitter" },
 
   -- [MISC] -- 
+  { import = "plugins.misc.auto-save" },
   { import = "plugins.misc.cmp" },
   { import = "plugins.misc.comform" },
   -- { import = "plugins.misc.copilot" },
