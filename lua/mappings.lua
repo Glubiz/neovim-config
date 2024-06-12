@@ -2,11 +2,11 @@ require "nvchad.mappings"
 local bufnr = vim.api.nvim_get_current_buf()
 
 local map = function(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, lhs, rhs, options)
+    local options = { noremap = true, silent = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- GROUP: [[ CORE MAPPINGS ]]
@@ -58,10 +58,10 @@ map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "LSP Next diagn
 map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "LSP Toggle outline" })
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "LSP Hover" })
 map("n", "[E", function()
-  require("lspsaga.diagnostic"):goto_prev { severity = vim.diagnostic.severity.ERROR }
+    require("lspsaga.diagnostic"):goto_prev { severity = vim.diagnostic.severity.ERROR }
 end, { desc = "LSP Prev error" })
 map("n", "]E", function()
-  require("lspsaga.diagnostic"):goto_next { severity = vim.diagnostic.severity.ERROR }
+    require("lspsaga.diagnostic"):goto_next { severity = vim.diagnostic.severity.ERROR }
 end, { desc = "LSP Next error" })
 
 -- PLUGIN: rustaceanvim
@@ -83,25 +83,3 @@ map("n", "<leader>fs", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git 
 
 -- PLUGIN: trouble
 map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", { desc = "Toggle Trouble" })
-
--- PLUGIN: harpoon    
--- basic telescope configuration
-local conf = require("telescope.config").values
-local function toggle_telescope(harpoon_files)
-    local file_paths = {}
-    for _, item in ipairs(harpoon_files.items) do
-        table.insert(file_paths, item.value)
-    end
-
-    require("telescope.pickers").new({}, {
-        prompt_title = "Harpoon",
-        finder = require("telescope.finders").new_table({
-            results = file_paths,
-        }),
-        previewer = conf.file_previewer({}),
-        sorter = conf.generic_sorter({}),
-    }):find()
-end
-
-vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-    { desc = "Open harpoon window" })

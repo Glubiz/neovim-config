@@ -5,7 +5,7 @@ local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 
 -- Install lazy if not in path
 if not vim.loop.fs_stat(lazypath) then
-  vim.system { "git", "clone", "--filter=blob:none", lazyrepo, "--branch=stable", lazypath }
+    vim.system { "git", "clone", "--filter=blob:none", lazyrepo, "--branch=stable", lazypath }
 end
 
 -- Prepend lazy to runtime path
@@ -14,17 +14,16 @@ vim.opt.rtp:prepend(lazypath)
 -- Load plugins
 local lazy_config = require "configs.lazy"
 require("lazy").setup({
-  {
-    "NvChad/NvChad",
-    lazy = false,
-    branch = "v2.5",
-    import = "nvchad.plugins",
-    config = function()
-      require "options"
-    end,
-  },
-  { import = "overrides" },
-  { import = "plugins" },
+    {
+        "NvChad/NvChad",
+        lazy = false,
+        branch = "v2.5",
+        import = "nvchad.plugins",
+        config = function()
+            require "options"
+        end,
+    },
+    { import = "plugins" },
 }, lazy_config)
 
 -- Load themes

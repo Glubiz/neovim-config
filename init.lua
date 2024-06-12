@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 require "bootstrap"
 
 require "autocmds"
