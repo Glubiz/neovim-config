@@ -14,7 +14,7 @@ return {
   -- [MISC] -- 
   { import = "plugins.misc.cmp" },
   { import = "plugins.misc.comform" },
-  { import = "plugins.misc.copilot" },
+  -- { import = "plugins.misc.copilot" },
   { import = "plugins.misc.crates" },
   { import = "plugins.misc.trouble" },
 
