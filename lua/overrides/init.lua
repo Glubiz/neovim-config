@@ -7,6 +7,9 @@ return {
         require("nvchad.configs.lspconfig").defaults()
         require "configs.lspconfig"
       end,
+      opts = {
+        inlay_hints = { enabled = true },
+      },
     },
     -- https://github.com/hrsh7th/nvim-cmp
     {

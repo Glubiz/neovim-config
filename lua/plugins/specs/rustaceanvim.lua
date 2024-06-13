@@ -6,32 +6,11 @@ return {
     "mfussenegger/nvim-dap",
     {
       "lvimuser/lsp-inlayhints.nvim",
-      opts = {}
+      opts = {} -- Ensure this table is correctly set up
     },
   },
   ft = { "rust" },
   config = function()
-    vim.g.rustaceanvim = {
-      inlay_hints = {
-        highlight = "NonText",
-      },
-      tools = {
-        hover_actions = {
-          auto_focus = true,
-        },
-      },
-      server = {
-        settings = {
-          ['rust-analyzer'] = {
-            cargo = {
-              features = 'all',
-            },
-          },
-        },
-        on_attach = function(client, bufnr)
-          require("lsp-inlayhints").on_attach(client, bufnr)
-        end
-      }
-    }
+    require "configs.rustaceanvim"
   end
 }
