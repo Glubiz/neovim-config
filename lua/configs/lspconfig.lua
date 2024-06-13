@@ -5,6 +5,8 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local lsps = require "mason.lsps"
 
+-- GROUP: [[ AUTO SERVERS ]]
+
 local excluded_lsps =  {
   "gitlab-ci-ls",
   "rust-analyzer",
@@ -46,6 +48,10 @@ for _, lsp in ipairs(lsps) do
     }
   end 
 end
+
+-- GROUP: [[ CUSTOM SERVERS ]]
+
+lspconfig.gitlab_ci_ls.setup{}
 
 -- GROUP: [[ UI ]]
 local border = "rounded" -- "single" | "rounded"
