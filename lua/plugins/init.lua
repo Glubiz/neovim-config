@@ -2,6 +2,9 @@ return {
   -- [COSMETICS] -- 
 
 
+  -- [FORMATTERS] -- 
+  { import = "plugins.misc.comform" },
+
   -- [LSP's] -- 
   { import = "plugins.lsp.lspconfig" },
   { import = "plugins.lsp.lspsaga" },
@@ -14,7 +17,6 @@ return {
   -- [MISC] -- 
   { import = "plugins.misc.auto-save" },
   { import = "plugins.misc.cmp" },
-  { import = "plugins.misc.comform" },
   -- { import = "plugins.misc.copilot" },
   { import = "plugins.misc.crates" },
   { import = "plugins.misc.trouble" },
@@ -22,4 +24,5 @@ return {
   -- [NAVIGATION] -- 
   { import = "plugins.navigation.nvim-tree" },
   { import = "plugins.navigation.telescope" },
+  { import = "plugins.navigation.vim-visual-multi" },
 }

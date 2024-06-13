@@ -2,5 +2,7 @@ return {
     "golangci-lint",
     "markdownlint",
     "shellcheck",
-    "stylelint"
+    "stylelint",
+    "sqlfluff",
+    "yamllint",
 }

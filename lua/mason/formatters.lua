@@ -3,5 +3,8 @@ return {
     "markdownlint",
     "mdformat",
     "prettier",
-    "stylua"
+    "rustfmt",
+    "stylua",
+    "sql-formatter",
+    "yamlfix",
 }
