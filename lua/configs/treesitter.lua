@@ -16,7 +16,9 @@ return {
         "json",
         "markdown",
         "markdown_inline",
-        "php"
+        "php",
+        "dockerfile",
+        "yaml"
     },
     auto_install = true,
     indent = { enable = true },
