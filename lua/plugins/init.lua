@@ -19,6 +19,7 @@ return {
   { import = "plugins.misc.cmp" },
   -- { import = "plugins.misc.copilot" },
   { import = "plugins.misc.crates" },
+  { import = "plugins.misc.gitsigns" },
   { import = "plugins.misc.trouble" },
 
   -- [NAVIGATION] -- 
