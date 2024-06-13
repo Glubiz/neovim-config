@@ -3,7 +3,7 @@ return {
 
 
   -- [FORMATTERS] -- 
-  { import = "plugins.misc.comform" },
+  { import = "plugins.formatter.comform" },
 
   -- [LSP's] -- 
   { import = "plugins.lsp.lspconfig" },
