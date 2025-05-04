@@ -1,7 +1,5 @@
-require "bootstrap"
+vim.g.mapleader = " "
+vim.opt.termguicolors = true
 
-require "autocmds"
-require "usercmds"
-
-require "globals"
-require "mappings"
+require("core.lazy").setup("custom.plugins")
+require("custom.chadrc")
